@@ -13,6 +13,7 @@
 int **fill_matrix(int rows, int cols);
 void free_matrix(int **, int);
 void print_matrix(int **, int, int);
+void erutta(int **, const int *, const int *);
 /**
 * Si consideri una matrice di valori interi positivi in cui ogni elemento rappresenta la quota
  * del terrono nell'area di un vulcano. Quando il vulcano erutta il cratere si apre ed esce la
@@ -20,44 +21,6 @@ void print_matrix(int **, int, int);
  * la quota delle otto posizioni attorno al vulcano, se hanno un quota inferiore a quella
  * del vulcano prima dell'eruzione (la lava puo' solo scendere).
  *
-*/
-
-/**
-* Esercizio A
- * Scrivere una funzione che, ricevuti in ingresso una matrice di interi, la posizione del vulcano
- * che erutta e qualsiasi altro parametro ritenuto strettamente necessario, aggiorna la matrice a
- * seguito dell'eruzione del vulcano, secondo le regole sopra descritte.
- * Nota:
- * Nel caso le coordinate del vulcano non siano valide, la funzione non fara' nulla. Si ipotizzi
- * che il numero di righe e colonne della matrice siano 2 costanti NR ed NC definite attraverso
- * la direttiva #define
-*/
-
-void erutta(int **matrix,const int *pos_x,const int *pos_y){
-    //calcolo delle posizioni da aggionare
-    int north = *pos_y - 1;
-    int south = *pos_y + 1;
-    int east = *pos_x + 1;
-    int west = *pos_x - 1;
-    //gli angoli sono una combinazione di questi
-    //aggiornamento delle posizioni
-    matrix[*pos_y][*pos_x] = matrix[*pos_y][*pos_x] +=1;
-    matrix[north][*pos_x] = matrix[north][*pos_x] +=1;
-    matrix[south][*pos_x] = matrix[south][*pos_x] +=1;
-    matrix[*pos_y][west] = matrix[*pos_y][west] +=1;
-    matrix[*pos_y][east] = matrix[*pos_y][east] +=1;
-    //aggiornamento angoli
-    matrix[north][east] = matrix[north][east] +=1;
-    matrix[north][west] = matrix[north][west] +=1;
-    matrix[south][east] = matrix[south][east] +=1;
-    matrix[south][west] = matrix[south][west] +=1;
-}
-
-/**
-* Esercizio B
- * Scrivere un programma che chiede all'utente i dati per popolare la matrice e le coordinate di
- * un vulcano. Il programma, quindi, richiamera' la funzione definita al punto precedente e
- * stampera' a video il contenuto della matrice dopo l'eruzione.
 */
 
 /**
@@ -108,6 +71,43 @@ int main(int argc, char *argv[]){
     }
 
 }
+
+/**
+* Esercizio A
+ * Scrivere una funzione che, ricevuti in ingresso una matrice di interi, la posizione del vulcano
+ * che erutta e qualsiasi altro parametro ritenuto strettamente necessario, aggiorna la matrice a
+ * seguito dell'eruzione del vulcano, secondo le regole sopra descritte.
+ * Nota:
+ * Nel caso le coordinate del vulcano non siano valide, la funzione non fara' nulla. Si ipotizzi
+ * che il numero di righe e colonne della matrice siano 2 costanti NR ed NC definite attraverso
+ * la direttiva #define
+*/
+void erutta(int **matrix,const int *pos_x,const int *pos_y){
+    //calcolo delle posizioni da aggionare
+    int north = *pos_y - 1;
+    int south = *pos_y + 1;
+    int east = *pos_x + 1;
+    int west = *pos_x - 1;
+    //gli angoli sono una combinazione di questi
+    //aggiornamento delle posizioni
+    matrix[*pos_y][*pos_x] = matrix[*pos_y][*pos_x] +=1;
+    matrix[north][*pos_x] = matrix[north][*pos_x] +=1;
+    matrix[south][*pos_x] = matrix[south][*pos_x] +=1;
+    matrix[*pos_y][west] = matrix[*pos_y][west] +=1;
+    matrix[*pos_y][east] = matrix[*pos_y][east] +=1;
+    //aggiornamento angoli
+    matrix[north][east] = matrix[north][east] +=1;
+    matrix[north][west] = matrix[north][west] +=1;
+    matrix[south][east] = matrix[south][east] +=1;
+    matrix[south][west] = matrix[south][west] +=1;
+}
+
+/**
+* Esercizio B
+ * Scrivere un programma che chiede all'utente i dati per popolare la matrice e le coordinate di
+ * un vulcano. Il programma, quindi, richiamera' la funzione definita al punto precedente e
+ * stampera' a video il contenuto della matrice dopo l'eruzione.
+*/
 
 int **fill_matrix(int rows, int cols){
     //allocazione matrice
