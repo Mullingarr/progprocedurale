@@ -90,8 +90,8 @@ void erutta(int **matrix,const int *pos_x,const int *pos_y){
     int west = *pos_x - 1;
     //gli angoli sono una combinazione di questi
     //aggiornamento delle posizioni
-    matrix[*pos_y][*pos_x] = matrix[*pos_y][*pos_x] +=1;
-    matrix[north][*pos_x] = matrix[north][*pos_x] +=1;
+    matrix[*pos_y][*pos_x] = matrix[*pos_y][*pos_x] +=2; //centro
+    matrix[north][*pos_x] = matrix[north][*pos_x] +=1; //nord
     matrix[south][*pos_x] = matrix[south][*pos_x] +=1;
     matrix[*pos_y][west] = matrix[*pos_y][west] +=1;
     matrix[*pos_y][east] = matrix[*pos_y][east] +=1;

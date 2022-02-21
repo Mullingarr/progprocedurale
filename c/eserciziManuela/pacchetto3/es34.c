@@ -44,3 +44,7 @@ void stampa(libro l)
     printf("Titolo: %s\n",l.titolo);
     printf("Autore: %s\n",l.autore);
 }
+
+void read(libro *l){
+    scanf("%d%*c", &l->anno);
+}

@@ -3,4 +3,5 @@ project(progprocedurale C)
 
 set(CMAKE_C_STANDARD 99)
 
-    add_executable(progprocedurale c/eserciziManuela/esameManuela.c)
+    add_executable(progprocedurale
+           c/pointers/pointers.c)

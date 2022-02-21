@@ -4,6 +4,14 @@
 
 #include <stdio.h>
 
+int valMedio(int *a){
+    int medio = 0;
+    for(int i = 0; i < 3; i++){
+        medio += a[i];
+    }
+    return medio / 3;
+}
+
 int main(){
 
     int a = 24;
@@ -18,6 +26,7 @@ int main(){
 
     *p_toA = 12; //the value pointed to -> dereferencing
     printf("*pToA: %d\n", *p_toA);
+    printf("a: %d\n", a);
     *p_toA = *p_toA + *(&b);
     printf("*pToA: %d\n", *p_toA);
 
@@ -26,5 +35,9 @@ int main(){
     printf("ptoA: %d\n", p_toA);
     printf("ptoA =+ 1: %d\n", p_toA += 1);
 
+    int arr[10] = {10, 20, 30};
+    int valorMedio  = valMedio(arr);
+    printf("%d", valorMedio);
     return 0;
 }
+
