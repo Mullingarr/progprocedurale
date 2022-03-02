@@ -15,6 +15,9 @@
 
 #include <stdio.h>
 #define DIM 5
+
+int *arrConc();
+
 int main()
 {
     int i;
@@ -126,5 +129,12 @@ int main()
 
     }
     printf("\nRisultato del prodotto scalare = %d", risultato);
+
+    int *array_conc = arrConc();
+
     return 0;
+}
+
+int *arrConc(){
+
 }
