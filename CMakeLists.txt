@@ -3,4 +3,4 @@ project(progprocedurale C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(progprocedurale c/eserciziManuela/pacchetto4/esManu.c)
+add_executable(progprocedurale c/aoc/day1.c)

@@ -72,11 +72,11 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 
 build cmake_object_order_depends_target_progprocedurale: phony || CMakeFiles/progprocedurale.dir
 
-build CMakeFiles/progprocedurale.dir/c/eserciziManuela/pacchetto4/esManu.c.o: C_COMPILER__progprocedurale_Debug /Users/mattiamac/Documents/GitHub/progprocedurale/c/eserciziManuela/pacchetto4/esManu.c || cmake_object_order_depends_target_progprocedurale
-  DEP_FILE = CMakeFiles/progprocedurale.dir/c/eserciziManuela/pacchetto4/esManu.c.o.d
+build CMakeFiles/progprocedurale.dir/c/aoc/day1.c.o: C_COMPILER__progprocedurale_Debug /Users/mattiamac/Documents/GitHub/progprocedurale/c/aoc/day1.c || cmake_object_order_depends_target_progprocedurale
+  DEP_FILE = CMakeFiles/progprocedurale.dir/c/aoc/day1.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu99
   OBJECT_DIR = CMakeFiles/progprocedurale.dir
-  OBJECT_FILE_DIR = CMakeFiles/progprocedurale.dir/c/eserciziManuela/pacchetto4
+  OBJECT_FILE_DIR = CMakeFiles/progprocedurale.dir/c/aoc
 
 
 # =============================================================================
@@ -86,7 +86,7 @@ build CMakeFiles/progprocedurale.dir/c/eserciziManuela/pacchetto4/esManu.c.o: C_
 #############################################
 # Link the executable progprocedurale
 
-build progprocedurale: C_EXECUTABLE_LINKER__progprocedurale_Debug CMakeFiles/progprocedurale.dir/c/eserciziManuela/pacchetto4/esManu.c.o
+build progprocedurale: C_EXECUTABLE_LINKER__progprocedurale_Debug CMakeFiles/progprocedurale.dir/c/aoc/day1.c.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk
   OBJECT_DIR = CMakeFiles/progprocedurale.dir
   POST_BUILD = :
