@@ -108,7 +108,8 @@ int strLength(char *str){
         count++;
         str++;
     }
-     **/
+    **/
+
     int i = 0;
     for(; *str != '\0'; str++)
         i++;

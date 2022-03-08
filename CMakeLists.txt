@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.21)
-project(progprocedurale C)
+project(progprocedurale)
 
-set(CMAKE_C_STANDARD 99)
+set(CMAKE_CXX_STANDARD 11)
 
-add_executable(progprocedurale c/aoc/day1.c)
+add_executable(progprocedurale cpp/aoc/day1.cpp)
