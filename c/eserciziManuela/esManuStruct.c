@@ -22,11 +22,21 @@ Node *nodeAlloc();
 
 int main(){
 
+
+
     head = nodeAlloc();
     head->value = 10;
     head->pos = 0;
     head->next = NULL;
+    /**
+    Node *new;
+    new = nodeAlloc();
+    new->pos = -1;
+    new->value = 22;
+    new->next = NULL;
 
+    head->next = new;
+    **/
     printf("Creazione della lista!\n");
     for(int i = 0; i < 5; i++){
         Node *tmp = nodeAlloc();
