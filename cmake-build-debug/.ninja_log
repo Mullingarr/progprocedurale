@@ -1,19 +1,4 @@
 # ninja log v5
-1	75	1646667280702314251	CMakeFiles/progprocedurale.dir/c/eserciziManuela/pacchetto5/es5.c.o	5567aca4c3a65554
-0	123	1645028314926003044	CMakeFiles/progprocedurale.dir/c/structs/tree.c.o	b65d0074d2134c00
-0	56	1644574161931489880	CMakeFiles/progprocedurale.dir/c/structs/structs.c.o	40a617550df57d62
-1	66	1644574004299106294	CMakeFiles/progprocedurale.dir/c/structs/Structs.c.o	6c26de7348692ead
-2	170	1647269099562576839	CMakeFiles/progprocedurale.dir/c/eserciziManuela/esManuStruct.c.o	6208e9b723b0a1db
-0	91	1644589767764577495	CMakeFiles/progprocedurale.dir/c/eserciziManuela/es1.c.o	31ee75ebda17752f
-0	127	1646660430424754220	CMakeFiles/progprocedurale.dir/c/eserciziManuela/pacchetto4/esManu.c.o	3f9b71160bf2a472
-1	132	1646656557997470606	CMakeFiles/progprocedurale.dir/c/aoc/day1.c.o	bf4262b20bd07ecd
-0	95	1645115233293219798	CMakeFiles/progprocedurale.dir/c/eserciziManuela/esameManuela.c.o	a6a2deabcc68d4c
-1	75	1644419870181899490	CMakeFiles/progprocedurale.dir/c/functions/patternMatcher.c.o	1607cb31a7d4b764
-0	76	1645456210086165840	CMakeFiles/progprocedurale.dir/c/pointers/pointers.c.o	26e4e8e7554b17e9
-1	82	1644573467397907797	CMakeFiles/progprocedurale.dir/c/functions/charPointersAndFunctions.c.o	abc551a4039d4b0c
-0	62	1645021117062771891	CMakeFiles/progprocedurale.dir/c/eserciziManuela/es22.c.o	4e2072d1fb540bc4
-1	68	1644848430918434179	CMakeFiles/progprocedurale.dir/c/functions/pointersToPointers.c.o	a42e5ec05a8784d9
-0	73	1647294122168166095	build.ninja	563492a9840b51e7
-171	318	1647269099712114626	progprocedurale	32eff636efcbef0d
-2	875	1646864375507590471	CMakeFiles/progprocedurale.dir/cpp/aoc/day1.cpp.o	fd799a6745805930
-1	92	1644502082220212087	CMakeFiles/progprocedurale.dir/c/functions/pointersAndFunctions.c.o	d06050fd3426a2d5
+0	73	1647378122905311201	build.ninja	563492a9840b51e7
+790	843	1647377795867058830	progprocedurale	3d2c4fba511dd3a5
+1	789	1647377795809609752	CMakeFiles/progprocedurale.dir/cpp/aoc/day1.cpp.o	a939ca2ae5a6f193
