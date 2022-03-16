@@ -27,6 +27,7 @@
 #include <string.h>
 
 #define MAXLIBRI 100
+#define MAX_ISBN 13
 
 typedef struct autore{
     char nome[50];
@@ -35,11 +36,11 @@ typedef struct autore{
 }Autore;
 
 typedef struct libro{
-    int isbn[13];
     char titolo[50];
     int annoPubblicazione;
     int codiceScaffale;
     float prezzo;
+    int *isbn;
     Autore *autore;
     struct libro *next;
     struct libro *prev;
@@ -52,7 +53,10 @@ Libro *mid = NULL; //elemento che si trova +/- a meta della lista
 void printBooks(int);
 void printBook(Libro *);
 Libro *bookAlloc(void);
-Libro readBook(void);
+Libro *readBook(void);
+Autore *autoreAlloc(void);
+int *readISBN(void);
+Autore *readAutore(void);
 
 int main(){
 
@@ -60,12 +64,62 @@ int main(){
 
 }
 
+Libro *readBook(void){
+   Libro *book = bookAlloc();
+   Autore *autore = autoreAlloc();
+   printf("Inserisci informazioni libro!");
+   printf("Titolo\n>");
+   scanf("%s", book->titolo);
+   printf("Anno pubblicazione\n>");
+   scanf("%d", &book->annoPubblicazione);
+   printf("Prezzo\n>");
+   scanf("%f", &book->prezzo);
+   printf("Codice Scaffale\n>");
+   scanf("%d", &book->codiceScaffale);
+   book->isbn = readISBN();
+   book->autore = readAutore();
+
+}
+
+int *readISBN(void){
+    printf("Leggo isbn libro");
+    int *isbn = (int *) malloc(MAX_ISBN * sizeof(int));
+    for(int i = 0; i < MAX_ISBN; i++){
+        printf("[%d]\n>", i);
+        scanf("%d", &isbn[i]);
+        printf("\n");
+    }
+    return isbn;
+}
+
+Autore *readAutore(void){
+    printf("Inserisci dati autore\n");
+    Autore *autore = autoreAlloc();
+    printf("Autore del libro");
+    printf("Nome\n>");
+    scanf("%s", autore->nome);
+    printf("Cognome\n>");
+    scanf("%s", autore->cognome);
+    printf("Anno nascita autore\n>");
+    scanf("%d", &autore->annoNascita);
+    return autore;
+}
+
+
 /**
  * Alloca lo spazio necessario a contenere una struct di tipo libro
  */
 Libro *bookAlloc(void){
     return (struct libro *) malloc(sizeof(struct libro));
 }
+
+/**
+ * Alloca lo spazio necessario a contenere una struct di tipo autore
+ */
+Autore *autoreAlloc(void){
+    return (struct autore *) malloc(sizeof(struct autore));
+}
+
 
 /**
  * Printa i libri appartenenti ad un certo scaffale
