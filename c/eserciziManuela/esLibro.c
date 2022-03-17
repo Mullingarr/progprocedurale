@@ -49,14 +49,20 @@ typedef struct libro{
 Libro *head = NULL; //primo elemento della lista dei libri
 Libro *tail = NULL; //ultimo elemento della lista dei libri
 Libro *mid = NULL; //elemento che si trova +/- a meta della lista
+size_t lunghezza_lista = 0;
 
 void printBooks(int);
-void printBook(Libro *);
+void printBook(const Libro *);
 Libro *bookAlloc(void);
 Libro *readBook(void);
 Autore *autoreAlloc(void);
 int *readISBN(void);
 Autore *readAutore(void);
+void insertBook(Libro *);
+Libro *deleteLibro(char *, int);
+void swapHead(Libro *);
+void swapTail(Libro *);
+void swapMid(Libro *);
 
 int main(){
 
@@ -78,7 +84,7 @@ Libro *readBook(void){
    scanf("%d", &book->codiceScaffale);
    book->isbn = readISBN();
    book->autore = readAutore();
-
+   return book;
 }
 
 int *readISBN(void){
@@ -120,7 +126,6 @@ Autore *autoreAlloc(void){
     return (struct autore *) malloc(sizeof(struct autore));
 }
 
-
 /**
  * Printa i libri appartenenti ad un certo scaffale
  */
@@ -152,10 +157,89 @@ void printBooks(int codiceScaffale){
 
 }
 
-void printBook(Libro *libro){
+void printBook(const Libro *libro){
     printf("Titolo libro: %s\n", libro->titolo);
     printf("Autore: %s %s\n", libro->autore->nome, libro->autore->cognome);
     printf("Anno pubblicazione %d\n", libro->annoPubblicazione);
     //printf("codice isbn ")
     printf("prezzo: %f\n", libro->prezzo);
+}
+
+/**
+ * in base al parametro "codice scaffale" del libro
+ * viene inserito nella giusta posizione nella lista.
+ * Se esiste gia' un nodo con lo stesso codice, la lista
+ * verrà "tagliata", inserito il nuovo nodo e infine
+ * riallacciata
+ */
+void insertBook(Libro *daInserire){
+    if(lunghezza_lista > 0){
+        if(tail == NULL){
+            tail = daInserire;
+            lunghezza_lista++;
+        }
+        if(tail != NULL && mid == NULL){ //head e tail sono != NULL
+           if(tail->codiceScaffale > daInserire->codiceScaffale){ //inserisco a destra, tail diventa mid
+               Libro *oldTail;
+               tail->next = daInserire;
+               oldTail = tail;
+               tail = daInserire;
+               tail->prev = oldTail;
+               tail->next = NULL;
+               mid = oldTail;
+               lunghezza_lista++;
+           }else{
+               mid = daInserire;
+               mid->next = tail;
+               mid->prev = head;
+               lunghezza_lista++;
+           }
+        }
+        if(mid != NULL){ //head e' sempre il primo che viene inizializzato
+            int codice = daInserire->codiceScaffale;
+            if(head->codiceScaffale >= codice && mid->codiceScaffale < codice){
+                //cerco qui
+                Libro *tmp = mid;
+                while(tmp->prev->codiceScaffale > codice){
+                    tmp = tmp->prev;
+                }
+                if(codice == tmp->codiceScaffale){ //match
+
+                }
+            }
+            else if(mid->codiceScaffale >= codice && tail->codiceScaffale < codice){
+                Libro *tmp = mid;
+                while(tmp->next->codiceScaffale < codice){
+                    tmp = tmp->next;
+                }
+                if(codice == tmp->codiceScaffale){ //match
+
+                }
+            }
+        }
+    }else{
+        head = daInserire;
+        printf("Libro inserito in testa\n");
+    }
+}
+
+/**
+ * Elimina la prima occorrenza del libro in base a titolo e codiceScaffale
+ * @return il nodo eliminato
+ */
+Libro *deleteLibro(char *titolo, int codiceScaffale){
+
+}
+
+
+void swapHead(Libro *newHead){
+
+}
+
+void swapTail(Libro *newTail){
+
+}
+
+void swapMid(Libro *newMid){
+
 }
