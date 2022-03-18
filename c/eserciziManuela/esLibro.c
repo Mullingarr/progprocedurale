@@ -176,49 +176,57 @@ void insertBook(Libro *daInserire){
     if(lunghezza_lista > 0){
         if(tail == NULL){
             tail = daInserire;
+            tail->next = NULL;
+            tail->prev = head;
             lunghezza_lista++;
         }
-        if(tail != NULL && mid == NULL){ //head e tail sono != NULL
-           if(tail->codiceScaffale > daInserire->codiceScaffale){ //inserisco a destra, tail diventa mid
-               Libro *oldTail;
-               tail->next = daInserire;
-               oldTail = tail;
-               tail = daInserire;
-               tail->prev = oldTail;
-               tail->next = NULL;
-               mid = oldTail;
-               lunghezza_lista++;
-           }else{
-               mid = daInserire;
-               mid->next = tail;
-               mid->prev = head;
-               lunghezza_lista++;
-           }
-        }
-        if(mid != NULL){ //head e' sempre il primo che viene inizializzato
-            int codice = daInserire->codiceScaffale;
-            if(head->codiceScaffale >= codice && mid->codiceScaffale < codice){
-                //cerco qui
-                Libro *tmp = mid;
-                while(tmp->prev->codiceScaffale > codice){
-                    tmp = tmp->prev;
-                }
-                if(codice == tmp->codiceScaffale){ //match
-
-                }
+        if(head != NULL && tail != NULL) {
+            if (mid == NULL && tail->codiceScaffale < daInserire->codiceScaffale) {
+                mid = daInserire;
+                mid->prev = head;
+                mid->next = tail;
+                lunghezza_lista++;
             }
-            else if(mid->codiceScaffale >= codice && tail->codiceScaffale < codice){
-                Libro *tmp = mid;
-                while(tmp->next->codiceScaffale < codice){
-                    tmp = tmp->next;
-                }
-                if(codice == tmp->codiceScaffale){ //match
-
+            else if(mid == NULL && tail->codiceScaffale >= daInserire->codiceScaffale){
+                swapTail(daInserire);
+                lunghezza_lista++;
+            }
+            else{//head è sempre il primo che viene inizializzato
+                int codice = daInserire->codiceScaffale;
+                if (head->codiceScaffale >= codice && mid->codiceScaffale < codice) {//sinistra
+                    //cerco qui
+                    Libro *tmp = mid;
+                    while (tmp->prev->codiceScaffale > codice) {
+                        tmp = tmp->prev;
+                    }
+                    if (codice == tmp->codiceScaffale) { //match
+                        Libro *oldPrev = tmp->prev;
+                        tmp->prev = daInserire;
+                        daInserire->next = tmp;
+                        daInserire->prev = oldPrev;
+                        lunghezza_lista++;
+                        printf("Libro inserito, lunghezza lista %zu\n", lunghezza_lista);
+                    }
+                }else if (mid->codiceScaffale >= codice && tail->codiceScaffale < codice) {//destra
+                    Libro *tmp = mid;
+                    while (tmp->next->codiceScaffale < codice) {
+                        tmp = tmp->next;
+                    }
+                    if (codice == tmp->codiceScaffale) { //match
+                        Libro *oldNext = tmp->next;
+                        tmp->next = daInserire;
+                        daInserire->next = oldNext;
+                        daInserire->prev = tmp;
+                        lunghezza_lista++;
+                        printf("Libro inserito, lunghezza lista %zu\n", lunghezza_lista);
+                    }
                 }
             }
         }
     }else{
         head = daInserire;
+        head->prev = NULL;
+        lunghezza_lista++;
         printf("Libro inserito in testa\n");
     }
 }
@@ -233,13 +241,25 @@ Libro *deleteLibro(char *titolo, int codiceScaffale){
 
 
 void swapHead(Libro *newHead){
-
+    Libro *tmp = head;
+    head = newHead;
+    tmp->next = head;
+    head->prev = tmp;
+    head->next = NULL;
 }
 
 void swapTail(Libro *newTail){
-
+    Libro *tmp = tail;
+    tail = newTail;
+    tmp->prev = tail;
+    tail->next = tmp;
+    tail->prev = NULL;
 }
 
 void swapMid(Libro *newMid){
-
+    Libro *tmp = mid;
+    mid = newMid;
+    mid->prev = tmp;
+    mid->next = tmp->next;
+    tmp->next = mid;
 }
