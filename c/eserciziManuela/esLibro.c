@@ -65,7 +65,7 @@ void swapTail(Libro *);
 void swapMid(Libro *);
 
 int main(){
-
+//tab
 
 
 }
@@ -196,7 +196,7 @@ void insertBook(Libro *daInserire){
                 if (head->codiceScaffale >= codice && mid->codiceScaffale < codice) {//sinistra
                     //cerco qui
                     Libro *tmp = mid;
-                    while (tmp->prev->codiceScaffale > codice) {
+                    while (tmp->prev->codiceScaffale > codice){
                         tmp = tmp->prev;
                     }
                     if (codice == tmp->codiceScaffale) { //match
@@ -226,6 +226,7 @@ void insertBook(Libro *daInserire){
     }else{
         head = daInserire;
         head->prev = NULL;
+        head->next = NULL;
         lunghezza_lista++;
         printf("Libro inserito in testa\n");
     }
