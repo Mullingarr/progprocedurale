@@ -5,4 +5,4 @@ project(progprocedurale)
 set(CMAKE_C_STANDARD 17)
 
 #add_executable(progprocedurale cpp/aoc/day1.cpp)
-add_executable(progprocedurale c/c/lista.c)
+add_executable(progprocedurale c/c/stack.c)
