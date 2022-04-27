@@ -1,9 +1,7 @@
 # ninja log v5
-0	381	1648990196530353646	CMakeFiles/progprocedurale.dir/c/c/lista.c.o	1b5b2ec42f484d7c
-1	527	1647799404099062027	CMakeFiles/progprocedurale.dir/cpp/filippo/compito2203.cpp.o	96200fd626bfee08
-6	312	1648990196463893694	CMakeFiles/progprocedurale.dir/c/c/stack.c.o	4a149c19da710442
-527	591	1647799404165684859	progprocedurale	c09a439d61da38d7
-0	73	1648990310354525756	build.ninja	563492a9840b51e7
-1	106	1648990310354525756	build.ninja	86fb35d47fc47c2a
-1	110	1648990310474046552	CMakeFiles/progprocedurale.dir/c/c/stack.c.o	4a149c19da710442
-111	231	1648990310600783974	progprocedurale	b312d6c2b390cb03
+70	135	1651061714135274276	progprocedurale	93fdf14f16405c31
+1	332	1650897646038795289	CMakeFiles/progprocedurale.dir/c/eserciziManuela/pacchetto12/es1.c.o	1a5394c42b818a53
+0	69	1651061714071414100	CMakeFiles/progprocedurale.dir/c/eserciziManuela/rmstring.c.o	36e11dbcb3df8da3
+1	106	1651062613355277629	build.ninja	86fb35d47fc47c2a
+0	1074	1650977225288429518	CMakeFiles/progprocedurale.dir/cpp/sorgenti/ordineChiamataCostruttori.cpp.o	f3f1f38f6e031854
+2	644	1650980701123279016	CMakeFiles/progprocedurale.dir/cpp/sorgenti/conversioni.cpp.o	6d98fde8772ac7fd

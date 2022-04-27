@@ -22,7 +22,9 @@ typedef struct nodo NODO;
 struct stack {struct nodo * top;};
 typedef struct stack STACK;
 
-void Init_stack(STACK * pt){pt->top=NULL;}
+void Init_stack(STACK * pt){
+    pt->top=NULL;
+}
 
 int Is_empty(STACK * pt){return (pt->top==NULL);}
 
