@@ -40,6 +40,37 @@ include CMakeFiles/rules.ninja
 # Logical path to working directory; prefix for absolute paths.
 
 cmake_ninja_workdir = /Users/mattiamac/Documents/GitHub/progprocedurale/cmake-build-debug/
+# =============================================================================
+# Object build statements for EXECUTABLE target progprocedurale
+
+
+#############################################
+# Order-only phony target for progprocedurale
+
+build cmake_object_order_depends_target_progprocedurale: phony || CMakeFiles/progprocedurale.dir
+
+build CMakeFiles/progprocedurale.dir/c/eserciziManuela/rmstring.c.o: C_COMPILER__progprocedurale_Debug /Users/mattiamac/Documents/GitHub/progprocedurale/c/eserciziManuela/rmstring.c || cmake_object_order_depends_target_progprocedurale
+  DEP_FILE = CMakeFiles/progprocedurale.dir/c/eserciziManuela/rmstring.c.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -std=gnu17
+  OBJECT_DIR = CMakeFiles/progprocedurale.dir
+  OBJECT_FILE_DIR = CMakeFiles/progprocedurale.dir/c/eserciziManuela
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target progprocedurale
+
+
+#############################################
+# Link the executable progprocedurale
+
+build progprocedurale: C_EXECUTABLE_LINKER__progprocedurale_Debug CMakeFiles/progprocedurale.dir/c/eserciziManuela/rmstring.c.o
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk
+  OBJECT_DIR = CMakeFiles/progprocedurale.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = progprocedurale
+  TARGET_PDB = progprocedurale.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -74,7 +105,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/mattiamac/Documents/GitHub/progprocedurale/cmake-build-debug
 
-build all: phony
+build all: phony progprocedurale
 
 # =============================================================================
 # Built-in targets
