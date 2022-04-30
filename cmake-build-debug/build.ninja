@@ -49,11 +49,29 @@ cmake_ninja_workdir = /Users/mattiamac/Documents/GitHub/progprocedurale/cmake-bu
 
 build cmake_object_order_depends_target_progprocedurale: phony || CMakeFiles/progprocedurale.dir
 
-build CMakeFiles/progprocedurale.dir/c/eserciziManuela/rmstring.c.o: C_COMPILER__progprocedurale_Debug /Users/mattiamac/Documents/GitHub/progprocedurale/c/eserciziManuela/rmstring.c || cmake_object_order_depends_target_progprocedurale
-  DEP_FILE = CMakeFiles/progprocedurale.dir/c/eserciziManuela/rmstring.c.o.d
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -std=gnu17
+build CMakeFiles/progprocedurale.dir/cpp/aoc/day17.cpp.o: CXX_COMPILER__progprocedurale_Debug /Users/mattiamac/Documents/GitHub/progprocedurale/cpp/aoc/day17.cpp || cmake_object_order_depends_target_progprocedurale
+  DEP_FILE = CMakeFiles/progprocedurale.dir/cpp/aoc/day17.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -std=gnu++17
   OBJECT_DIR = CMakeFiles/progprocedurale.dir
-  OBJECT_FILE_DIR = CMakeFiles/progprocedurale.dir/c/eserciziManuela
+  OBJECT_FILE_DIR = CMakeFiles/progprocedurale.dir/cpp/aoc
+
+build CMakeFiles/progprocedurale.dir/cpp/aoc/utils/Reader.cpp.o: CXX_COMPILER__progprocedurale_Debug /Users/mattiamac/Documents/GitHub/progprocedurale/cpp/aoc/utils/Reader.cpp || cmake_object_order_depends_target_progprocedurale
+  DEP_FILE = CMakeFiles/progprocedurale.dir/cpp/aoc/utils/Reader.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -std=gnu++17
+  OBJECT_DIR = CMakeFiles/progprocedurale.dir
+  OBJECT_FILE_DIR = CMakeFiles/progprocedurale.dir/cpp/aoc/utils
+
+build CMakeFiles/progprocedurale.dir/cpp/aoc/conway_cubes/conwayCube.cpp.o: CXX_COMPILER__progprocedurale_Debug /Users/mattiamac/Documents/GitHub/progprocedurale/cpp/aoc/conway_cubes/conwayCube.cpp || cmake_object_order_depends_target_progprocedurale
+  DEP_FILE = CMakeFiles/progprocedurale.dir/cpp/aoc/conway_cubes/conwayCube.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -std=gnu++17
+  OBJECT_DIR = CMakeFiles/progprocedurale.dir
+  OBJECT_FILE_DIR = CMakeFiles/progprocedurale.dir/cpp/aoc/conway_cubes
+
+build CMakeFiles/progprocedurale.dir/cpp/aoc/utils/Coordinate.cpp.o: CXX_COMPILER__progprocedurale_Debug /Users/mattiamac/Documents/GitHub/progprocedurale/cpp/aoc/utils/Coordinate.cpp || cmake_object_order_depends_target_progprocedurale
+  DEP_FILE = CMakeFiles/progprocedurale.dir/cpp/aoc/utils/Coordinate.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -std=gnu++17
+  OBJECT_DIR = CMakeFiles/progprocedurale.dir
+  OBJECT_FILE_DIR = CMakeFiles/progprocedurale.dir/cpp/aoc/utils
 
 
 # =============================================================================
@@ -63,7 +81,7 @@ build CMakeFiles/progprocedurale.dir/c/eserciziManuela/rmstring.c.o: C_COMPILER_
 #############################################
 # Link the executable progprocedurale
 
-build progprocedurale: C_EXECUTABLE_LINKER__progprocedurale_Debug CMakeFiles/progprocedurale.dir/c/eserciziManuela/rmstring.c.o
+build progprocedurale: CXX_EXECUTABLE_LINKER__progprocedurale_Debug CMakeFiles/progprocedurale.dir/cpp/aoc/day17.cpp.o CMakeFiles/progprocedurale.dir/cpp/aoc/utils/Reader.cpp.o CMakeFiles/progprocedurale.dir/cpp/aoc/conway_cubes/conwayCube.cpp.o CMakeFiles/progprocedurale.dir/cpp/aoc/utils/Coordinate.cpp.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk
   OBJECT_DIR = CMakeFiles/progprocedurale.dir
   POST_BUILD = :
