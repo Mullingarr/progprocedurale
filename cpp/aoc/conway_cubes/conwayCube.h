@@ -27,6 +27,7 @@ public:
     std::string getS();
     void setS(std::string);
     void printCube();
+    std::string toString();
 private:
     std::vector<int> coordinatesVector;
     int x, y, z;

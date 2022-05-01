@@ -3,6 +3,7 @@
 //
 #include <iostream>
 #include <vector>
+#include <sstream>
 #include "conwayCube.h"
 
 conwayCube::conwayCube() {
@@ -98,6 +99,15 @@ void conwayCube::printCube(){
    std::cout << "{" << this->x << "}" << "{" << this->y << "}"
         << "{" << this->z << "}\n";
    std::cout << "{status} : " << "{" << this->active << "}" << "\n";
+}
+
+std::string conwayCube::toString() {
+   std::ostringstream os;
+   os << "{" << this->x << "}"
+        << "{" << this->y << "}"
+            << "{" << this->z << "}"
+            << "{" << this->active << "}";
+   return os.str();
 }
 
 

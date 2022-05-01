@@ -2,7 +2,6 @@
 // Created by Mattia Lunardi on 28/04/22.
 //
 #include <string>
-#include <iostream>
 #include <vector>
 #include "Coordinate.h"
 
@@ -21,14 +20,11 @@ public:
     void setOutputDir(std::string&);
     void setFilename(std::string&);
     std::vector<std::string> readInput();
-    std::vector<int> convertVector(std::vector<std::string>&);
-    std::vector<std::string> tokenizeStrings(std::vector<std::string>&);
-
+    std::vector<std::string> readAndTokenizeInput();
 private:
     std::string filename;
     std::string pathToInput = "/Users/mattiamac/Documents/GitHub/progprocedurale/cpp/aoc/input/";
     std::string pathToOutput = "/Users/mattiamac/Documents/GitHub/progprocedurale/cpp/aoc/out/";
-    std::vector<std::string> v;
 };
 
 
