@@ -35,6 +35,35 @@ conwayCube::conwayCube(int x, int y, int z, bool active) {
     this->active = active;
 }
 
+conwayCube::conwayCube(Coordinate& c, std::string& s){
+   std::vector<int> v;
+   v = c.getCoords();
+   this->x = v[0];
+   this->y = v[1];
+   this->z = v[2];
+   this->s = s;
+   if(s == ".")
+       this->active = false;
+   else if(s == "#")
+       this->active = true;
+
+}
+
+conwayCube::conwayCube(int x, int y, int z, std::string& s){
+    std::vector<int> vec;
+    vec.push_back(x);
+    vec.push_back(y);
+    vec.push_back(z);
+    this->coordinatesVector = vec;
+    this->x = x;
+    this->y = y;
+    this->z = z;
+    if(s == ".")
+        this->active = false;
+    else if(s == "#")
+        this->active = true;
+}
+
 conwayCube::conwayCube(const std::vector<int>& v){
     this->coordinatesVector = v;
     this->x = v[0];
@@ -56,17 +85,19 @@ conwayCube::conwayCube(const conwayCube &otherCube) {
 
 conwayCube::~conwayCube()= default;
 
-std::vector<int> conwayCube::getCoordinates(){
-    return this->coordinatesVector;
-}
+std::vector<int> conwayCube::getCoordinates() {return this->coordinatesVector;}
+void conwayCube::setCoordinates(std::vector<int>& vec){this->coordinatesVector = vec;}
 
-void conwayCube::setCoordinates(std::vector<int>& vec){
-    this->coordinatesVector = vec;
-}
+bool conwayCube::isActive(){return this->active;}
+void conwayCube::setActive(bool active){this->active = active;}
+
+std::string conwayCube::getS() {return this->s;}
+void conwayCube::setS(std::string s){this->s = s;}
 
 void conwayCube::printCube(){
    std::cout << "{" << this->x << "}" << "{" << this->y << "}"
         << "{" << this->z << "}\n";
    std::cout << "{status} : " << "{" << this->active << "}" << "\n";
 }
+
 

@@ -10,3 +10,4 @@ add_executable(progprocedurale cpp/aoc/day17.cpp cpp/aoc/utils/Reader.cpp cpp/ao
 #add_executable(progprocedurale  c/eserciziManuela/rmstring.c)
 #add_executable(progprocedurale cpp/sorgenti/ordineChiamataCostruttori.cpp)
 #add_executable(progprocedurale cpp/sorgenti/conversioni.cpp)
+#add_executable(progprocedurale cpp/multithreading/multi.cpp)

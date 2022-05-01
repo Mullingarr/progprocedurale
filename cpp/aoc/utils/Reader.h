@@ -4,6 +4,8 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include "Coordinate.h"
+
 
 #ifndef PROGPROCEDURALE_READER_H
 #define PROGPROCEDURALE_READER_H
