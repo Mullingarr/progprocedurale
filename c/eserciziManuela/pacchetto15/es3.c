@@ -79,48 +79,12 @@ void print_list(lista *l){
 }
 
 void push_list(lista testa, lista nodo_da_aggiungere){
-    lista copia_testa = testa;
-    size_t index = 0;
-    while(copia_testa->next != NULL){
-        copia_testa = copia_testa->next;
-        index++;
-    }
-    if(copia_testa->next == NULL){
-        copia_testa->next = nodo_da_aggiungere;
-        index++;
-    }
-    printf("aggiunto nodo a: [%zu], valore: [%d]\n", index, nodo_da_aggiungere->el);
 }
 
 lista remove_from_list(lista testa, int valore){
-    lista copia_testa = testa;
-    size_t index = 0;
-    while(copia_testa->next != NULL || copia_testa->next->el == valore){
-        copia_testa = copia_testa->next;
-        index++;
-    }
-    if(copia_testa->next->el == valore){//ho trovato il nodo da rimuovere
-        index++;
-        if(copia_testa->next->next != NULL){
-            lista tmp = copia_testa->next->next;
-            lista ris = copia_testa->next;
-            copia_testa->next = tmp;
-            printf("Rimosso nodo a [%zu], con valore [%d]\n", index, valore);
-            printf("Sostituito con il nodo a [%zu] con valore [%d]\n", index+1, valore);
-            return ris;
-        }else if(copia_testa->next->next == NULL){ //ultimo nodo
-            lista ris = copia_testa->next;
-            copia_testa->next = NULL;
-            printf("Rimosso nodo a [%zu], con valore [%d]\n", index, valore);
-            return ris;
-        }
-    }
-    printf("Nessun nodo con valore [%d] trovato.\n", valore);
-    return NULL;
 }
 
 void size(lista *head){
-    //TODO
 }
 
 struct nodo *alloc_nodo(){
