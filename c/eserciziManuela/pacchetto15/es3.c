@@ -11,33 +11,77 @@ typedef struct nodo *lista;
 void shift(lista *);
 void size(lista *);
 void push_list(lista, lista);
+void push_list_manu(lista*, lista);
 lista remove_from_list(lista, int);
+lista remove_from_list_manu(lista*, int);
 void print_list(lista *);
 struct nodo *alloc_nodo();
 
 int main(int argc, char *argv[]){
     lista head_list = alloc_nodo();
+    head_list->next = NULL;
 
     int valori[LENGTH] = {10, 20, 30 ,40, 50, 60, 70, 80, 90, 100};
     lista copia_testa = head_list;
+
+    lista *curr = &head_list;
+
+
     for(int i = 0; i < LENGTH; i++){
         printf("creazione nodo %d, valore: %d\n", i, valori[i]);
-        copia_testa->el = valori[i];
-        if(i < LENGTH-1){
-            copia_testa->next = alloc_nodo();
-            copia_testa = copia_testa->next;
-        }
+        lista nodo = alloc_nodo();
+
+        nodo->el = valori[i];
+        nodo->next = NULL;
+        push_list_manu(curr, nodo);
+
+        copia_testa = copia_testa->next;
+        curr = &copia_testa;
+
     }
 
     lista *list = &head_list;
     print_list(list);
-    shift(list);
+   /* shift(list);
     printf("================\n");
     print_list(list);
     printf("================\n");
     shift(list);
     print_list(list);
+*/
+   return 0;
+}
 
+void push_list_manu(lista *l, lista nodo_da_aggiungere){
+    lista head = *l;
+    printf(" valore head pre while %d\n", head->el);
+    while(head->next !=NULL){
+        head = head->next;
+    }
+    head->next = nodo_da_aggiungere;
+
+}
+
+lista remove_from_list_manu(lista* l, int val_da_rimuovere){
+    lista head = *l;
+    while(head->next->el != val_da_rimuovere || head->next != NULL){
+        head= head->next;
+    }
+    if(head->next == NULL) return NULL;
+    if(head->next->el == val_da_rimuovere){
+        if(head->next->next != NULL){
+            lista tmp = head->next->next;
+            lista risultato = head->next;
+            head->next = tmp;
+            return risultato;
+        }else{
+            lista risultato =head->next;
+            head->next= NULL;
+            return risultato;
+        }
+
+    }
+    return NULL;
 }
 
 /**
